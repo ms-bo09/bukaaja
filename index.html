@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <title>Selamat Ulang Tahun....</title>
+    <style>
+        body {
+            font-family: 'Poppins';
+            background: linear-gradient(to top, #7a7a7bba, #7a7a7bba), url('bg.jpeg') no-repeat top center;
+            overflow: hidden;
+        }
+        @media screen and (min-width: 890px) {
+            img {
+                width: 20%;
+                height: auto;
+            }
+            button {
+                margin-top: 200px !important;
+            }
+        }
+        @media screen and (min-width: 466px) {
+            img {
+                width: 50%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1 class="text-white fw-bold text-center mt-4 mb-4">Happy birthday cantikkk...</h1>
+        </div>
+        <div class="d-flex justify-content-center">
+                <img class="img-thumbnail" src="meme3.jpg" alt="" width="80%" height="auto" id="image">
+                <img class="d-none" src="sad.jpeg" alt="" height="auto" id="image2" style="width: 600px;">
+        </div>
+        <div class="row">
+            <h4 class="text-white text-center mt-4" id="aa">Boleh minta tolong klik tombol bawah ini, aku mau bilang sesuatu</h4>
+            <img class="d-none" src="love.gif" alt="" width="50%" height="auto" id="image3">
+            <h4 class="text-white text-center fw-bold mt-4 d-none" id="bb">I LOVE YOU</h4>
+        </div>
+        <div class="row">
+            <center>
+                <button class="btn btn-primary" style="margin-top:10%" onclick="klik()" id="ilang">Sentuh aku</button>
+            </center>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.29/dist/sweetalert2.all.min.js"></script>
+    <script>
+        function klik() {
+            let timerInterval;
+            var audio = new Audio('au.mp3');
+            audio.play();
+	        audio.loop = true;
+            Swal.fire({
+                timer: 6300,
+                html: 'Happy birthday! Tidak terasa hari demi hari berlalu tanpamu dan sekarang kamu telah berusia 20 tahun.<br><b class="d-none"></b>',
+                imageUrl: '1.jpg',
+                imageWidth: 200,
+                imageHeight: 320,
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading()
+                    const b = Swal.getHtmlContainer().querySelector('b')
+                    timerInterval = setInterval(() => {
+                    b.textContent = Swal.getTimerLeft()
+                    }, 100)
+                },
+                willClose: () => {
+                    clearInterval(timerInterval)
+                }
+            }).then((result) => {
+                Swal.fire({
+                    timer: 6300,
+                    html: 'Semoga di hari kelahiranmu ini kamu selalu diiringi dengan kebahagiaan dan kebaikan.<br><b class="d-none"></b>',
+                    imageUrl: '2.jpg',
+                    imageWidth: 200,
+                    imageHeight: 320,
+                    timerProgressBar: true,
+                    didOpen: () => {
+                        Swal.showLoading()
+                        const b = Swal.getHtmlContainer().querySelector('b')
+                        timerInterval = setInterval(() => {
+                        b.textContent = Swal.getTimerLeft()
+                        }, 100)
+                    },
+                    willClose: () => {
+                        clearInterval(timerInterval)
+                    }
+                }).then((result) => {
+                    Swal.fire({
+                        timer: 6300,
+                        html: 'Saat bersamamu aku sungguh bahagia dan tidak merasa kalau hari demi hari terlewati begitu saja.<br><b class="d-none"></b>',
+                        imageUrl: '3.jpeg',
+                        imageWidth: 200,
+                        imageHeight: 320,
+                        timerProgressBar: true,
+                        didOpen: () => {
+                            Swal.showLoading()
+                            const b = Swal.getHtmlContainer().querySelector('b')
+                            timerInterval = setInterval(() => {
+                            b.textContent = Swal.getTimerLeft()
+                            }, 100)
+                        },
+                        willClose: () => {
+                            clearInterval(timerInterval)
+                        }
+                    }).then((result) => {
+                        Swal.fire({
+                            timer: 6300,
+                            html: 'Ini adalah perasaanku saat ini, terima kasih untuk semuanya, semoga kamu selalu bahagia.<br><b class="d-none"></b>',
+                            imageUrl: '4.jpg',
+                            imageWidth: 200,
+                            imageHeight: 320,
+                            timerProgressBar: true,
+                            didOpen: () => {
+                                Swal.showLoading()
+                                const b = Swal.getHtmlContainer().querySelector('b')
+                                timerInterval = setInterval(() => {
+                                b.textContent = Swal.getTimerLeft()
+                                }, 100)
+                            },
+                            willClose: () => {
+                                clearInterval(timerInterval)
+                            }
+                        }).then((result) => {
+                            $("#aa").addClass('d-none');
+                            $("#bb").removeClass('d-none');
+                            $("#ilang").addClass('d-none');
+                            $("#image").addClass('d-none');
+                            $("#image2").removeClass('d-none');
+                            $("#image3").removeClass('d-none');
+                        })
+                    })
+                })
+            })
+        }
+    </script>
+</body>
+</html>
